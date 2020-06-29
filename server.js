@@ -6,7 +6,7 @@ const server = express();
 const PORT = process.env.PORT || 3000;
 
 mongoose.connect(
-    process.env.MONGODB_URI || 'mongodb://localhost/userdb', 
+    process.env.MONGODB_URI || 'mongodb://localhost/workout', 
     { useNewUrlParser: true }
 );
 
