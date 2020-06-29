@@ -4,7 +4,7 @@ const router = express.Router();
 const db = require('../models');
 
 router.get('/api/workouts', (req, res) => {
-    db.Exercise.find().then(dbExercise => {
+    db.Workout.find().then(dbExercise => {
         res.json(dbExercise);
     })
     .catch(error => {
