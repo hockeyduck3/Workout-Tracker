@@ -44,7 +44,9 @@ router.put('/api/workouts/:id', (req, res) => {
 });
 
 router.get('/api/workouts/range', (req, res) => {
-    db.Workout.find().then(dbExercise => {
+    // Added a sort to make sure that it the results come in ascending order by the day
+    // Also added a limit since the front-end only shows the week
+    db.Workout.find().sort({'day': 1}).limit(7).then(dbExercise => {
         res.json(dbExercise);
     })
     .catch(error => {
